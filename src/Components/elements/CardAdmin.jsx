@@ -54,7 +54,7 @@ const CardAdmin = ({ ...props }) => {
       if (result.isConfirmed) {
         const token = sessionStorage.getItem("token");
         const res = await axios.delete(
-          `https://ceriamusicapi-production.up.railway.app/api/room/${id}`,
+          `https://serverceriamusic-production.up.railway.app/api/room/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -162,7 +162,7 @@ const CardAdmin = ({ ...props }) => {
           <div className="h-screen md:h-[460px] flex flex-col bg-white rounded-lg shadow-lg p-6">
             <CardStudio
               title={selectedData.name}
-              img={`https://ceriamusicapi-production.up.railway.app/${selectedData.photo}`}
+              img={`https://serverceriamusic-production.up.railway.app/${selectedData.photo}`}
               status={selectedData.status}
               price={selectedData.price_perhour}
               facilities={selectedData.facilities}
