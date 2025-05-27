@@ -1,0 +1,14 @@
+{
+    "rewrites": [
+      { "source": "/login", "destination": "/" },
+      { "source": "/admin", "destination": "/" },
+      { "source": "/admin/room", "destination": "/" },
+      { "source": "/room/:id", "destination": "/" },
+      { "source": "/booking/:id", "destination": "/" },
+      { "source": "/payment/:id", "destination": "/" },
+      { "source": "/forget-password", "destination": "/" },
+      { "source": "/reset-password/:token", "destination": "/" },
+      { "source": "/(.*)", "destination": "/" }
+    ]
+  }
+  
