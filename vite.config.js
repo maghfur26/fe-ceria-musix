@@ -10,7 +10,7 @@ export default defineConfig({
       workbox: {
         runtimeCaching: [
           {
-            urlPattern: /^https:\/\/ceriamusicapi-production\.up\.railway\.app\/.*$/,
+            urlPattern: /^https:\/\/serverceriamusic-production\.up\.railway\.app\/.*$/,
             handler: 'NetworkFirst', 
             options: {
               cacheName: 'api-cache',
