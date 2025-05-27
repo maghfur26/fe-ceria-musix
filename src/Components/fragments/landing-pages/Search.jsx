@@ -16,7 +16,7 @@ const Search = () => {
   const getRooms = async () => {
     try {
       const res = await axios.get(
-        "https://ceriamusicapi-production.up.railway.app/api/room"
+          "https://serverceriamusic-production.up.railway.app/api/room"
       );
       if (res.status === 200) {
         setListStudio(res.data.data);
