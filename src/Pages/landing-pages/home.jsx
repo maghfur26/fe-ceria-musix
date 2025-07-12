@@ -20,6 +20,9 @@ const Home = () => {
         targetElement.scrollIntoView({ behavior: "smooth" });
       }
     }
+
+    console.log("VITE_BASE_URL:", import.meta.env.VITE_BASE_URL);
+
   }, [location.hash]);
 
   return (
