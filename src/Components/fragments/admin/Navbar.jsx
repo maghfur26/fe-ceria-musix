@@ -101,7 +101,7 @@ const Navbar = () => {
     try {
       const token = sessionStorage.getItem("token");
       const response = await axios.get(
-        "https://serverceriamusic-production.up.railway.app/api/user",
+        `${import.meta.env.VITE_BASE_URL}/api/user`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -146,7 +146,7 @@ const Navbar = () => {
         >
           <img
             className="w-full h-full object-cover"
-            src={`https://serverceriamusic-production.up.railway.app/${user.photo}`}
+            src={`${import.meta.env.VITE_BASE_URL}/${user?.photo}`}
             alt="profile"
             id="account-icon"
           />
@@ -166,10 +166,10 @@ const Navbar = () => {
           <h2 className="text-xl font-semibold text-gray-800">Profile Admin</h2>
           <div className="mt-4 text-gray-700 space-y-2">
             <p>
-              <span className="font-medium">Nama:</span> {user.username}
+              <span className="font-medium">Nama:</span> {user?.username}
             </p>
             <p>
-              <span className="font-medium">Email:</span> {user.email}
+              <span className="font-medium">Email:</span> {user?.email}
             </p>
           </div>
           <button

@@ -28,7 +28,7 @@ const ResetPassword = () => {
 
     try {
       const response = await axios.post(
-          "https://serverceriamusic-production.up.railway.app/api/reset-password/:token",
+          `${import.meta.env.VITE_BASE_URL}/api/reset-password/:token`,
           { token, newPassword }
       );
 

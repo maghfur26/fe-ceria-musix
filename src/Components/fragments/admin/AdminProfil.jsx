@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Bg from "../../../assets/bgLandingPages.jpg";
 import axios from "axios";
 import "sweetalert2/dist/sweetalert2.min.css";
@@ -18,8 +18,9 @@ const AdminProfile = () => {
     const fetchUser = async () => {
         try {
             const token = sessionStorage.getItem("token");
+            const baseUrl = import.meta.env.VITE_BASE_URL;
             const response = await axios.get(
-                "https://serverceriamusic-production.up.railway.app/api/user",
+                `${baseUrl}/api/user`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -96,7 +97,7 @@ const AdminProfile = () => {
             }
 
             const response = await axios.put(
-                "https://serverceriamusic-production.up.railway.app/api/user/update",
+                `${import.meta.env.VITE_BASE_URL}/api/user/update`,
                 formData,
                 {
                     headers: {
@@ -236,7 +237,7 @@ const AdminProfile = () => {
                                         </label>
                                         {user?.photo ? (
                                             <img
-                                                src={`https://serverceriamusic-production.up.railway.app/${user?.photo}`}
+                                                src={`${import.meta.env.VITE_BASE_URL}/${user?.photo}`}
                                                 alt="Profile"
                                                 className="w-50 h-20 rounded-lg mt-2 object-cover"
                                             />

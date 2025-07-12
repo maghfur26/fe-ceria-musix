@@ -22,7 +22,7 @@ const DetailRoom = () => {
     const getRoom = async () => {
         try {
             const res = await axios.get(
-                `https://serverceriamusic-production.up.railway.app/api/room/${id}`
+                `${import.meta.env.VITE_BASE_URL}/api/room/${id}`
             );
             const data = res.data.data;
             setRoom(data);
@@ -53,7 +53,7 @@ const DetailRoom = () => {
                 className="md:mr-4 md:w-[45%] h-[350px] rounded-xl overflow-hidden"
             >
                 <img
-                    src={`https://serverceriamusic-production.up.railway.app/${room.photo}`}
+                    src={`${import.meta.env.VITE_BASE_URL}/${room.photo}`}
                     className="w-full h-full object-cover"
                     alt={room.name || "Room Image"}
                 />

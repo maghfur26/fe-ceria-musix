@@ -26,7 +26,7 @@ const Booking = () => {
       }
 
       const res = await axios.get(
-        "https://serverceriamusic-production.up.railway.app/api/booking",
+        `${import.meta.env.VITE_BASE_URL}/api/booking`,
         header
       );
       if (res.status === 200) {
@@ -40,7 +40,7 @@ const Booking = () => {
   const getBookingDetails = async (id) => {
     try {
       const res = await axios.get(
-        `https://serverceriamusic-production.up.railway.app/api/booking/${id}`,
+        `${import.meta.env.VITE_BASE_URL}/api/booking/${id}`,
         header
       );
       if (res.status === 200) {
@@ -65,7 +65,7 @@ const Booking = () => {
       if (result.isConfirmed) {
         axios
           .delete(
-            `https://serverceriamusic-production.up.railway.app/api/booking/${id}`,
+            `${import.meta.env.VITE_BASE_URL}/api/booking/${id}`,
             header
           )
           .then((res) => {
@@ -101,7 +101,7 @@ const Booking = () => {
       }
 
       const res = await axios.get(
-        `https://serverceriamusic-production.up.railway.app/api/booking/search?name=${searchQuery}`,
+        `${import.meta.env.VITE_BASE_URL}/api/booking/search?name=${searchQuery}`,
         header
       );
 

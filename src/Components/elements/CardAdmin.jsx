@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
@@ -54,7 +54,7 @@ const CardAdmin = ({ ...props }) => {
       if (result.isConfirmed) {
         const token = sessionStorage.getItem("token");
         const res = await axios.delete(
-          `https://serverceriamusic-production.up.railway.app/api/room/${id}`,
+          `${import.meta.env.VITE_BASE_URL}/api/room/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -162,7 +162,7 @@ const CardAdmin = ({ ...props }) => {
           <div className="h-screen md:h-[460px] flex flex-col bg-white rounded-lg shadow-lg p-6">
             <CardStudio
               title={selectedData.name}
-              img={`https://serverceriamusic-production.up.railway.app/${selectedData.photo}`}
+              img={`${import.meta.env.VITE_BASE_URL}/${selectedData.photo}`}
               status={selectedData.status}
               price={selectedData.price_perhour}
               facilities={selectedData.facilities}

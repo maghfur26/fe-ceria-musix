@@ -74,11 +74,11 @@ const Dashboard = () => {
         resTotalRevenue,
         resMonthlyRevenue,
       ] = await Promise.all([
-        axios.get("https://serverceriamusic-production.up.railway.app/api/total-rooms", { headers }),
-        axios.get("https://serverceriamusic-production.up.railway.app/api/total-bookings", { headers }),
-        axios.get("https://serverceriamusic-production.up.railway.app/api/total-revenue", { headers }),
+        axios.get(`${import.meta.env.VITE_BASE_URL}/api/total-rooms`, { headers }),
+        axios.get(`${import.meta.env.VITE_BASE_URL}/api/total-bookings`, { headers }),
+        axios.get(`${import.meta.env.VITE_BASE_URL}/api/total-revenue`, { headers }),
         axios.get(
-          "https://serverceriamusic-production.up.railway.app/api/monthly-revenue?year=" +
+          `${import.meta.env.VITE_BASE_URL}/api/monthly-revenue?year=` +
             new Date().getFullYear(),
           { headers }
         ),

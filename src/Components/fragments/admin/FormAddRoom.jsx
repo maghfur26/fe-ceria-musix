@@ -94,7 +94,7 @@ const FormAddRoom = () => {
   
     try {
       const res = await axios.post(
-        "https://serverceriamusic-production.up.railway.app/api/room/add",
+        `${import.meta.env.VITE_BASE_URL}/api/room/add`,
         formDataToSend,
         {
           headers: {
@@ -124,7 +124,7 @@ const FormAddRoom = () => {
   const getFacilities = async () => {
     try {
       const res = await axios.get(
-        "https://serverceriamusic-production.up.railway.app/api/facilities", {
+        `${import.meta.env.VITE_BASE_URL}/api/facilities`, {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem("token")}`,
           },

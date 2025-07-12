@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -25,7 +25,7 @@ const EditRoom = () => {
     const fetchRoomData = async () => {
       try {
         const res = await axios.get(
-          `https://serverceriamusic-production.up.railway.app/api/room/${id}`
+          `${import.meta.env.VITE_BASE_URL}/api/room/${id}`
         );
         if (res.status === 200) {
           setFormData(res.data.data);
@@ -60,7 +60,7 @@ const EditRoom = () => {
       }
 
       const res = await axios.put(
-        `https://serverceriamusic-production.up.railway.app/api/room/${id}`,
+        `${import.meta.env.VITE_BASE_URL}/api/room/${id}`,
         formDataObj,
         headers
       );

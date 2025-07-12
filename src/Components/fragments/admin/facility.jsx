@@ -21,7 +21,7 @@ const Facility = () => {
   const fetchFacilities = async () => {
     try {
       const response = await axios.get(
-        "https://serverceriamusic-production.up.railway.app/api/facilities",
+        `${import.meta.env.VITE_BASE_URL}/api/facilities`,
         {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem("token")}`,
@@ -42,7 +42,7 @@ const Facility = () => {
   const handleSearch = async (query) => {
     try {
       const res = await axios.get(
-        `https://serverceriamusic-production.up.railway.app/api/facility/search?name=${query}`,
+        `${import.meta.env.VITE_BASE_URL}/api/facility/search?name=${query}`,
         {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem("token")}`,
@@ -90,7 +90,7 @@ const Facility = () => {
     e.preventDefault();
     try {
       await axios.post(
-        "https://serverceriamusic-production.up.railway.app/api/facility",
+        `${import.meta.env.VITE_BASE_URL}/api/facility`,
         addFacilityForm,
         {
           headers: {
@@ -120,7 +120,7 @@ const Facility = () => {
     e.preventDefault();
     try {
       await axios.put(
-        `https://serverceriamusic-production.up.railway.app/api/facility/${editFacilityForm.id}`,
+        `${import.meta.env.VITE_BASE_URL}/api/facility/${editFacilityForm.id}`,
         { name: editFacilityForm.name, unit: editFacilityForm.unit },
         {
           headers: {
@@ -158,7 +158,7 @@ const Facility = () => {
       if (result.isConfirmed) {
         try {
           await axios.delete(
-            `https://serverceriamusic-production.up.railway.app/api/facility/${facilityId}`,
+            `${import.meta.env.VITE_BASE_URL}/api/facility/${facilityId}`,
             {
               headers: {
                 Authorization: `Bearer ${sessionStorage.getItem("token")}`,

@@ -7,7 +7,7 @@ const RoomPages = () => {
             <CardAdmin
                 title={"Daftar Studio"}
                 url={
-                    "https://serverceriamusic-production.up.railway.app/api/room"
+                    `${import.meta.env.VITE_BASE_URL}/api/room`
                 }
             />
         </Admin>
